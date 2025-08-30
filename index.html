@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Web Authenticator</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <!-- load jsQR before main.js -->
+  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Authenticator</h1>
+      <div id="controls">
+        <button id="initBtn">Init Vault</button>
+        <button id="unlockBtn">Unlock</button>
+        <button id="fab">+</button>
+      </div>
+    </header>
+
+    <main>
+      <div id="accounts" class="accounts"></div>
+    </main>
+
+    <!-- Add dialog -->
+    <div id="addDialog" class="dialog hidden">
+      <div class="box">
+        <h3>Add account</h3>
+        <label>otpauth URI (optional)</label>
+        <input id="uriInput" placeholder="otpauth://...">
+        <div class="or">OR</div>
+        <label>Secret (Base32)</label>
+        <input id="secretInput" placeholder="JBSWY3DPEHPK3PXP">
+        <label>Issuer (optional)</label>
+        <input id="issuerInput" placeholder="Github">
+        <label>Label</label>
+        <input id="labelInput" placeholder="you@example.com">
+        <div class="row">
+          <button id="scanQrBtn">Scan QR (webcam)</button>
+          <input id="fileInput" type="file" accept="image/*">
+          <button id="addConfirmBtn">Add</button>
+          <button id="addCancelBtn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- QR Camera -->
+    <div id="qrCamera" class="dialog hidden">
+      <div class="box">
+        <video id="video" width="320" height="240" autoplay playsinline></video>
+        <canvas id="qrCanvas" class="hidden"></canvas>
+        <div class="row"><button id="qrStop">Stop</button></div>
+      </div>
+    </div>
+
+    <script src="/static/main.js"></script>
+  </div>
+</body>
+</html>

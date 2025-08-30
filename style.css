@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #121212;
+  color: white;
+}
+
+header {
+  text-align: center;
+  padding: 15px;
+  font-size: 1.3em;
+  border-bottom: 1px solid #333;
+}
+
+main {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.account {
+  background: #1e1e1e;
+  padding: 15px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.account h3 {
+  margin: 0;
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+.account .code {
+  font-size: 2em;
+  letter-spacing: 4px;
+  margin: 5px 0;
+}
+
+.progress-circle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 3px solid #555;
+  border-top-color: #2196F3;
+  animation: spin linear infinite;
+  animation-duration: var(--time-left, 30s);
+}
+
+#fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: #2196F3;
+  color: white;
+  font-size: 2em;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.hidden { display: none; }
+
+.modal-content {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 400px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+button {
+  background: #2196F3;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
